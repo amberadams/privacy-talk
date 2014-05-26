@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+		<link rel="stylesheet" href="css/theme/solarize.css" id="theme">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -57,7 +57,6 @@
 					<section>
 						<h2>Threats to Privacy</h2>
 						<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
 						</aside>
 					</section>
 					<section>
@@ -122,7 +121,7 @@
 						<h2>SOLUTIONS</h2>
 
 						<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+						discussion of ethics of hacking, how blurry the line is between good guys and bad guys, "you have nothing to hide if you're not doing anything wrong" NSA compromising security on the Internet by creating backdoors, weakening crypto opens up attack from people we definitely can't trust 
 						</aside>
 				</section>
 				<section>
@@ -152,7 +151,9 @@
 
 						<aside class="notes">
 						TOR solves the privacy problem of traffic analysis in two ways: through anonymity and encryption. TOR will route your network traffic through three nodes before reaching the destination via the last node (called an exit node). At each node, the request is encrypted using the public key of the next node in the chain, thereby creating a layer of encryption at each level and fulfilling the onion metaphor. The same process happens in reverse with the response. Of course, this means that your traffic is most vulnerable to eavesdropping when leaving the onion routing network, so ideally your sensitive communications should take place entirely within the network.
-						EXPLAIN BRIDGES AND RELAYS. 
+						Tor is a service that helps you to protect your anonymity while using the Internet. 
+
+						Tor is comprised of two parts: software you can download that allows you to use the Internet anonymously, and the volunteer network of computers that makes it possible for that software to work. The Tor software depends on the Tor network, which is made up of Tor relays operated by individuals and organizations all over the world. The more Tor relays we have running, the faster, more robust, and more secure the Tor network will be. Tor relays are also referred to as "routers" or "nodes." They receive traffic on the Tor network and pass it along. There are three kinds of relays that you can run in order to help the Tor network: middle relays, exit relays, and bridges. For greater security, all Tor traffic passes through at least three relays before it reaches its destination. The first two relays are middle relays which receive traffic and pass it along to another relay. Middle relays add to the speed and robustness of the Tor network without making the owner of the relay look like the source of the traffic. Middle relays advertise their presence to the rest of the Tor network, so that any Tor user can connect to them. Even if a malicious user employs the Tor network to do something illegal, the IP address of a middle relay will not show up as the source of the traffic. That means a middle relay is generally safe to run in your home, in conjunction with other services, or on a computer with your personal files. An exit relay is the final relay that Tor traffic passes through before it reaches its destination. Exit relays advertise their presence to the entire Tor network, so they can be used by any Tor users. Because Tor traffic exits through these relays, the IP address of the exit relay is interpreted as the source of the traffic. If a malicious user employs the Tor network to do something that might be objectionable or illegal, the exit relay may take the blame. People who run exit relays should be prepared to deal with complaints, copyright takedown notices, and the possibility that their servers may attract the attention of law enforcement agencies. If you aren't prepared to deal with potential issues like this, you might want to run a middle relay instead. We recommend that an exit relay should be operated on a dedicated machine in a hosting facility that is aware that the server is running an exit node. Bridges are Tor relays which are not publicly listed as part of the Tor network. Bridges are essential censorship-circumvention tools in countries that regularly block the IP addresses of all publicly listed Tor relays, such as China. A bridge is generally safe to run in your home, in conjunction with other services, or on a computer with your personal files
 						</aside>
 					</section>
 					<section>
@@ -173,7 +174,13 @@
 						<p>Host your own <a href="https://github.com/whackashoe/tor-hidden-service-setup">hidden services</a> on a virtual machine.</p>
 						<p>Host your own <a href="http://lifehacker.com/5952148/how-to-create-a-super-private-bittorrent-community-for-you-and-your-friends">torrents</a> while you're at it, too.</p>
 						<aside class="notes">
-							unfortunate that the Dark Net is used by criminals such as pedophiles, but it has the potential to be an Internet relatively immune from censorship as well
+							A hidden service needs to advertise its existence in the Tor network before clients will be able to contact it. Therefore, the service randomly picks some relays, builds circuits to them, and asks them to act as introduction points by telling them its public key. By using a full Tor circuit, it's hard for anyone to associate an introduction point with the hidden server's IP address. While the introduction points and others are told the hidden service's identity or public key, they don't know the hidden server's actual location or IP address. 
+							
+							The hidden service assembles a hidden service descriptor, containing its public key and a summary of each introduction point, and signs this descriptor with its private key. It uploads that descriptor to a distributed hash table. The descriptor will be found by clients requesting XYZ.onion where XYZ is a 16 character name derived from the service's public key. After this step, the hidden service is set up. 
+							
+							A client that wants to contact a hidden service needs to learn about its onion address first. After that, the client can initiate connection establishment by downloading the descriptor from the distributed hash table. If there is a descriptor for XYZ.onion (the hidden service could also be offline or have left long ago, or there could be a typo in the onion address), the client now knows the set of introduction points and the right public key to use. Around this time, the client also creates a circuit to another randomly picked relay and asks it to act as rendezvous point by telling it a one-time secret. 
+							
+							It's unfortunate that the Dark Net is used by criminals such as pedophiles, but it has the potential to be an Internet relatively immune from other types of government censorship that most of us would probably not approve of.
 						</aside>
 					</section>
 				</section>
