@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>323.4483: Online Privacy and TOR</title>
+		<title>Online Privacy</title>
 
 		<meta name="description" content="how to counter pervasive mass surveillance and attacks on data security">
 		<meta name="author" content="Amber Adams">
@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/solarize.css" id="theme">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -43,43 +43,42 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>323.4483:</h1>
-					<h3>Online Privacy and TOR</h3>
-					<p>
-						<small>Created by <a href="http://amberadams.co">Amber Adams</a> / <a href="http://twitter.com/amberadams">@amberadams</a></small>
-						<small> aka <a href="http://twitter.com/anarchival">@anarchival</a></small>
+					<h2>Online Privacy using</h2>
+					<h2>GPG, TOR, and Tails</h2>
+					<p><small>
+						Created by <a href="http://amberadams.co">Amber Adams</a> / <a href="http://twitter.com/amberadams">@amberadams</a>
+						aka <a href="http://twitter.com/anarchival">@anarchival</a></small>
 					</p>
 					<p>
-						<small> <a href="http://www.amberadams.co/privacy-talk">view this presentation on the Web</a></small>
+						<small><a href="http://www.amberadams.co/privacy-talk">view this presentation on the Web</a></small>
 					</p>
 				</section>
 				<section>
 					<section>
-						<h2>Threats to Privacy</h2>
-						<aside class="notes">
+						<h2>Right to Privacy</h2>
+						<aide class="notes">
 						</aside>
 					</section>
 					<section>
 						<h2>The NSA</h2>
-						<li>PRISM</li>
-						<li>XKeyscore</li>
-						<li>Tempora</li>
-					<p></p>
-					<p>
-						<small> <a href="http://www.roguelynn.com/prism/">Lynn Root's presentation on NSA surveillance</a> and <a href="http://prism-break.org/en/">PRISM Break</a></small>
-						<small> <a href="http://www.munkdebates.com/debates/state-surveillance">Tonight at 6pm CST Greg Greenwald debates Michael Hayden</a></small>
+					<li><a href="http://www.roguelynn.com/prism/">Lynn Root's presentation on NSA surveillance</a></li>
+					<li><a href="http://prism-break.org/en/">PRISM Break</a></li>
+					<li><a href="https://www.eff.org/deeplinks/2013/06/why-metadata-matters">Why Metadata Matters</a></li>
+					<li><a href="http://www.munkdebates.com/debates/state-surveillance">Greg Greenwald debates Michael Hayden</a></li>
 						<img width="538" height="303" src="images/yeswescan.jpg">
-					</p>
+					</section>
+					<section>
+						<h2>The Law</h2>
+						<li>SCOTUS ruling on <a href="http://www.supremecourt.gov/opinions/13pdf/13-132_8l9c.pdf">warrants and cell phones</a>.</li>
+						<li>White House issues a <a href="http://www.whitehouse.gov/blog/2014/05/01/pcast-releases-report-big-data-and-privacy">report</a> on Big Data.</li>
+						<li>Net Neutrality and the <a href="https://www.youtube.com/watch?v=fpbOEoRrHyU">FCC</a>.</li>
 					</section>
 					<section>
 						<h2>Law Enforcement</h2>
-						<p>U.S. counter-terrorism officers <a href="http://boingboing.net/2013/01/01/foiad-fbi-documents-reveal-s.html">monitored and investigated</a> Occupy.</p>
-						<p><a href="http://www.theguardian.com/technology/2013/jan/24/hacking-us-government-cyber-crackdown">Draconian prosecutions</a> of hackers such as Aaron Swartz, Andrew Auernheimer, Matthew Keys, Deric Lostutter, and others.</p>
-						<p>SCOTUS ruling on <a href="https://www.eff.org/deeplinks/2014/04/government-plays-fast-and-loose-technology-supreme-court-cell-phone-cases">warrants and cell phones</a>.</p>
-						<p>White House issues a <a href="http://www.whitehouse.gov/blog/2014/05/01/pcast-releases-report-big-data-and-privacy">report</a> on how Big Data can be used to both empower and harm citizens.
-						<p>Net Neutrality comes to an end at the <a href="http://www.huffingtonpost.com/craig-aaron/the-fccs-flimsy-defense-o_b_5244603.html">FCC</a>.</p>
-					<p></p>
-					</p>
+						<li>U.S. counter-terrorism officers <a href="http://boingboing.net/2013/01/01/foiad-fbi-documents-reveal-s.html">investigated</a> Occupy.</li>
+						<li>Subject to surveillance: <a href="http://www.trackedinamerica.org/timeline/civil_rights/intro/">Civil Rights</a> and <a href="http://www.npg.org.uk/collections/search/set/455/The+Suffragettes%3A+surveillance+photographs">Suffragettes.</a></li>
+						<li><a href="http://www.theguardian.com/technology/2013/jan/24/hacking-us-government-cyber-crackdown">Draconian prosecutions</a> of hackers such as Aaron Swartz, Andrew Auernheimer, Matthew Keys, Deric Lostutter, and others...</li>
+						<p>Coders are the new Communists?</p>
 					</section>
 					<section>
 						<h2>Heart Bleed</h2>
@@ -115,8 +114,8 @@
 					</section>
 				</section>
 				<section>
-						<p>
-						hack or be hacked
+						<p><h3>
+						hack or be hacked</h3>
 						</p>
 						<h2>SOLUTIONS</h2>
 
@@ -153,7 +152,7 @@
 						TOR solves the privacy problem of traffic analysis in two ways: through anonymity and encryption. TOR will route your network traffic through three nodes before reaching the destination via the last node (called an exit node). At each node, the request is encrypted using the public key of the next node in the chain, thereby creating a layer of encryption at each level and fulfilling the onion metaphor. The same process happens in reverse with the response. Of course, this means that your traffic is most vulnerable to eavesdropping when leaving the onion routing network, so ideally your sensitive communications should take place entirely within the network.
 						Tor is a service that helps you to protect your anonymity while using the Internet. 
 
-						Tor is comprised of two parts: software you can download that allows you to use the Internet anonymously, and the volunteer network of computers that makes it possible for that software to work. The Tor software depends on the Tor network, which is made up of Tor relays operated by individuals and organizations all over the world. The more Tor relays we have running, the faster, more robust, and more secure the Tor network will be. Tor relays are also referred to as "routers" or "nodes." They receive traffic on the Tor network and pass it along. There are three kinds of relays that you can run in order to help the Tor network: middle relays, exit relays, and bridges. For greater security, all Tor traffic passes through at least three relays before it reaches its destination. The first two relays are middle relays which receive traffic and pass it along to another relay. Middle relays add to the speed and robustness of the Tor network without making the owner of the relay look like the source of the traffic. Middle relays advertise their presence to the rest of the Tor network, so that any Tor user can connect to them. Even if a malicious user employs the Tor network to do something illegal, the IP address of a middle relay will not show up as the source of the traffic. That means a middle relay is generally safe to run in your home, in conjunction with other services, or on a computer with your personal files. An exit relay is the final relay that Tor traffic passes through before it reaches its destination. Exit relays advertise their presence to the entire Tor network, so they can be used by any Tor users. Because Tor traffic exits through these relays, the IP address of the exit relay is interpreted as the source of the traffic. If a malicious user employs the Tor network to do something that might be objectionable or illegal, the exit relay may take the blame. People who run exit relays should be prepared to deal with complaints, copyright takedown notices, and the possibility that their servers may attract the attention of law enforcement agencies. If you aren't prepared to deal with potential issues like this, you might want to run a middle relay instead. We recommend that an exit relay should be operated on a dedicated machine in a hosting facility that is aware that the server is running an exit node. Bridges are Tor relays which are not publicly listed as part of the Tor network. Bridges are essential censorship-circumvention tools in countries that regularly block the IP addresses of all publicly listed Tor relays, such as China. A bridge is generally safe to run in your home, in conjunction with other services, or on a computer with your personal files
+					
 						</aside>
 					</section>
 					<section>
@@ -308,7 +307,7 @@
 
 				<section>
 					<section>
-						<h2>OTR</h2>
+						<h1>OTR</h1>
 
 						<aside class="notes">
 						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
